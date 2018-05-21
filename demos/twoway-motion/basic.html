@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<head>
+    <title>3dio | Fancy Apartment</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    <script src="https://fasility.com/components/twoway-motion/twoway-motion.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+
+</head>
+
+<body>
+    <script>
+
+        AFRAME.registerComponent('startup', {
+            init: function () {
+                startup();
+            }
+        });
+
+        startup = function () {
+            console.log('A-Frame is ready.');
+            /*
+            document.querySelector("[camera]").setAttribute("position", {
+                x: -13.885415634798132, 
+                y: 1.6, 
+                z: -20.730999896801084
+            });
+            document.querySelector("[camera]").setAttribute("rotation", {
+                x: 9.281916281119349, 
+                y: 141.6351669563396, 
+                z: 0
+            });
+            */
+        }
+
+    </script>
+
+    <a-scene startup antialias="true">
+
+        <a-entity id="environment" position="0 -.714 0" environment="fog: 10; groundTexture: walkernoise; groundColor: #2d4519; groundColor2: #435d31;"></a-entity>
+
+        <a-plane id="floor" rotation="-90 0 0" position="0 -.46 0" opacity="0.2" width="100" height="100" src="checker.png" material="src: url(checker.png); repeat: 100 100"></a-plane>
+
+        <a-entity id="cam" camera twoway-motion="nonMobileLoad: true; chatty: false;" position="0 1.6 0" wasd-controls look-controls>
+            <a-cursor scale="2 2 2" color="white" opacity="0.3">
+            </a-cursor>
+
+            <a-entity geometry="primitive: triangle" position="0 -0.08 -1" material="shader: flat; color: #ee8822; transparent: true; opacity: 0.6" rotation="0 0 180" scale=".08 0.06 .08"></a-entity>
+        </a-entity>
+
+        <a-box color="red" onclick="console.log('hi')"></a-box>
+
+        <a-entity position="0 50 0" light="groundColor:#2d4519;intensity:0.572;type:hemisphere;color:#CEE4F0"></a-entity>
+        <a-entity position="-0.11 1 0.33" light="shadowCameraLeft:-10;shadowCameraBottom:-10;shadowCameraRight:10;shadowCameraTop:10;intensity:0.2722448147213711"></a-entity>
+
+    </a-scene>
+
+    <script>
+    </script>
+
+</body>

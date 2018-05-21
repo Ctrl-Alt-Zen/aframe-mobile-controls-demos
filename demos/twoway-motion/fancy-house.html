@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<head>
+    <title>3dio | Fancy Apartment</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+    <script src="https://dist.3d.io/3dio-js/1.1.x/3dio.min.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    <script src="https://fasility.com/components/twoway-motion/twoway-motion.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+
+</head>
+
+<body>
+    <script>
+
+        AFRAME.registerComponent('startup', {
+            init: function () {
+                startup();
+            }
+        });
+
+        startup = function () {
+            console.log('A-Frame is ready.');
+            /*
+            document.querySelector("[camera]").setAttribute("position", {
+                x: -13.885415634798132, 
+                y: 1.6, 
+                z: -20.730999896801084
+            });
+            document.querySelector("[camera]").setAttribute("rotation", {
+                x: 9.281916281119349, 
+                y: 141.6351669563396, 
+                z: 0
+            });
+            */
+        }
+
+    </script>
+
+    <a-scene startup antialias="true">
+
+        <a-entity id="environment" position="0 -.714 0" environment="fog: 10; groundTexture: walkernoise; groundColor: #2d4519; groundColor2: #435d31;"></a-entity>
+
+        <a-plane id="floor" rotation="-90 0 0" position="0 -.46 0" opacity="0.2" width="100" height="100" src="checker.png" material="src: url(checker.png); repeat: 100 100"></a-plane>
+
+        <a-entity id="apartment" io3d-data3d="key:/3f995099-d624-4c8e-ab6b-1fd5e3799173/170420-1105-7yb890/8db476b3-7eb7-45a7-a09b-03e965f12685.gz.data3d.buffer" position="-17.975 0 -14.085" rotation="0 178.82012786032993 0"></a-entity>
+
+        <!--
+
+    
+<a-entity id="banff-all" position="-8.64 0 4.462" rotation="0 178.82 0">
+            <a-entity id="banff1" io3d-data3d="key:/535e624259ee6b0200000484/160923-1353-vr6hg6/archilogic_2016-09-23_13-45-10_FCs0Y2.gz.data3d.buffer"></a-entity>
+
+            <a-entity id="banff2" io3d-data3d="key:/535e624259ee6b0200000484/160923-1355-e5vwFT/archilogic_2016-09-23_13-45-46_hfbD1E.gz.data3d.buffer"></a-entity>
+
+            <a-entity id="banff3" io3d-data3d="key:/535e624259ee6b0200000484/2017-11-23_22-15_V4TGOU/2017-11-23_22-15-44_7AaENl.gz.data3d.buffer"></a-entity>
+
+            <a-entity id="banff4" io3d-data3d="key:/535e624259ee6b0200000484/2017-11-23_22-52_gwe6rI/2017-11-23_22-52-39_9q5h3B.gz.data3d.buffer"></a-entity>
+
+            <a-entity id="banff4" io3d-data3d="key:/535e624259ee6b0200000484/2017-11-23_22-46_KP3Pvx/2017-11-23_22-46-29_RmU7TP.gz.data3d.buffer"></a-entity>
+
+            <a-entity id="banff5" io3d-data3d="key:/535e624259ee6b0200000484/2017-11-23_21-53_6UtJTS/2017-11-23_21-53-45_d1PE1m.gz.data3d.buffer"></a-entity>
+
+            <a-entity id="banff6" io3d-data3d="key:/535e624259ee6b0200000484/2017-11-23_22-3_4w2Wy6/2017-11-23_22-3-19_cC65ci.gz.data3d.buffer"></a-entity>
+
+            <a-entity id="banff7" io3d-data3d="key:/535e624259ee6b0200000484/2017-11-23_22-0_yQZlrj/2017-11-23_22-0-21_7XAYEt.gz.data3d.buffer"></a-entity>
+
+            <a-entity id="banff7" io3d-data3d="key:/535e624259ee6b0200000484/2017-11-23_21-45_rdZnn5/2017-11-23_21-45-55_zNnriH.gz.data3d.buffer"></a-entity>
+
+            <a-entity id="banff8" io3d-data3d="key:/535e624259ee6b0200000484/2017-11-23_21-52_AxwAVb/2017-11-23_21-52-54_P4WOpM.gz.data3d.buffer"></a-entity>
+
+        </a-entity>
+
+
+-->
+    
+
+        <!--    
+        Banff Pavilion
+        https://storage.3d.io/535e624259ee6b0200000484/160923-1353-vr6hg6/archilogic_2016-09-23_13-45-10_FCs0Y2.gz.data3d.buffer
+
+        Sistine Chapel?
+        https://storage.3d.io/535e624259ee6b0200000484/161130-1218-kDeCs7/803d875d-84d4-41d0-89ac-f263f3797bc1.gz.data3d.buffer
+
+        The Office
+        https://storage.3d.io/3f995099-d624-4c8e-ab6b-1fd5e3799173/170322-1344-gnmrpy/cce4e195-20f8-48bf-a628-902f0181e6ee.gz.data3d.buffer
+
+        Big Bang Theory 
+        https://storage.3d.io/3f995099-d624-4c8e-ab6b-1fd5e3799173/170420-1105-7yb890/8db476b3-7eb7-45a7-a09b-03e965f12685.gz.data3d.buffer
+
+        Grey Apartment
+        https://storage.3d.io/535e624259ee6b0200000484/bake/2017-03-02_16-08-42_qJWmw1/regular/lighting.gz.data3d.buffer
+-->
+
+        <a-entity id="cam" camera twoway-motion="nonMobileLoad: true; chatty: false;" position="0 1.6 0" wasd-controls look-controls>
+            <a-cursor scale="2 2 2" color="white" opacity="0.3">
+            </a-cursor>
+        </a-entity>
+
+        <!--
+        <a-box id="upbox" onclick="clickUp()" color="red" position="24.022 1.075 -0.056"></a-box>
+        <a-box id="downbox" onclick="clickDown()" color="blue" position="24.119 0.151 0"></a-box>
+-->
+
+        <a-entity position="0 50 0" light="groundColor:#2d4519;intensity:0.572;type:hemisphere;color:#CEE4F0"></a-entity>
+        <a-entity position="-0.11 1 0.33" light="shadowCameraLeft:-10;shadowCameraBottom:-10;shadowCameraRight:10;shadowCameraTop:10;intensity:0.2722448147213711"></a-entity>
+
+    </a-scene>
+
+    <!-- Play / Pause button -->
+    <button id="play-pause">Play</button>
+
+    <script>
+
+        clickUp = function () {
+            var rig = $('rig');
+            var pos = rig.getAttribute("position");
+            rig.sa('position', {
+                x: pos.x,
+                y: 3.8,
+                z: pos.z
+            });
+        }
+
+        clickDown = function () {
+            var rig = $('rig');
+            var pos = rig.getAttribute("position");
+            rig.sa('position', {
+                x: pos.x,
+                y: 0,
+                z: pos.z
+            });
+        }
+
+    </script>
+
+</body>

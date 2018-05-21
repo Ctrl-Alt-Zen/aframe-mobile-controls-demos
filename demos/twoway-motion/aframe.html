@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<head>
+    <title>A-Frame - Mobile Controls</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+    <!--
+
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+-->
+
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"></script>
+
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    <script src="https://fasility.com/components/twoway-motion/twoway-motion.js"></script>
+    <script src="https://fasility.com/components/tilt-turn/tilt-turn.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+
+</head>
+
+<body>
+    <script>
+
+        AFRAME.registerComponent('startup', {
+            init: function () {
+                startup();
+            }
+        });
+
+        startup = function () {
+            console.log('A-Frame is ready.');
+            /*
+            document.querySelector("[camera]").setAttribute("position", {
+                x: -13.885415634798132, 
+                y: 1.6, 
+                z: -20.730999896801084
+            });
+            document.querySelector("[camera]").setAttribute("rotation", {
+                x: 9.281916281119349, 
+                y: 141.6351669563396, 
+                z: 0
+            });
+            */
+        }
+
+    </script>
+
+    <a-scene startup antialias="true">
+
+
+
+        <a-entity id="ply" ply-model="src:aframe.ply" position="7 -3.22 -25" scale="0.8 0.8 0.8" rotation="-90 0 0"></a-entity>
+
+        <a-entity id="environment" position="0 0 0" environment="fog: 10; groundTexture: walkernoise; groundColor: #2d4519; groundColor2: #435d31;"></a-entity>
+
+        <a-plane id="floor" rotation="-90 0 0" position="0 0.1 0" opacity="0.2" width="100" height="100" src="checker.png" material="src: url(checker.png); repeat: 100 100"></a-plane>
+
+        <a-plane id="big-floor" rotation="-90 0 0" position="0 -0.1 0" opacity="1" width="1000" height="1000" color="#5b8b42"></a-plane>
+
+        <a-entity id="cam" camera tilt-turn twoway-motion="nonMobileLoad: true; chatty: false;" position="0 1.6 0" wasd-controls
+            look-controls>
+            <a-cursor scale="2 2 2" color="white" opacity="0.3">
+            </a-cursor>
+        </a-entity>
+
+        <a-entity position="0 50 0" light="groundColor:#2d4519;intensity:0.572;type:hemisphere;color:#CEE4F0"></a-entity>
+        <a-entity position="-0.11 1 0.33" light="shadowCameraLeft:-10;shadowCameraBottom:-10;shadowCameraRight:10;shadowCameraTop:10;intensity:0.2722448147213711"></a-entity>
+
+        <!--
+<a-obj-model src="aframe.obj" mtl="aframe.mtl"></a-obj-model>
+     <a-gltf-model src="aframe6.gltf"></a-gltf-model>
+                        
+ 
+
+-->
+        <!-- Kevin's MagicaVoxel model -->
+
+        <!--
+
+-->
+
+
+    </a-scene>
+
+    <!-- Play / Pause button -->
+    <button id="play-pause">Play</button>
+
+    <script>
+
+        clickUp = function () {
+            var rig = $('rig');
+            var pos = rig.getAttribute("position");
+            rig.sa('position', {
+                x: pos.x,
+                y: 3.8,
+                z: pos.z
+            });
+        }
+
+        clickDown = function () {
+            var rig = $('rig');
+            var pos = rig.getAttribute("position");
+            rig.sa('position', {
+                x: pos.x,
+                y: 0,
+                z: pos.z
+            });
+        }
+
+    </script>
+
+</body>
