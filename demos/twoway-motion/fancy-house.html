@@ -6,7 +6,8 @@
     <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
     <script src="https://dist.3d.io/3dio-js/1.1.x/3dio.min.js"></script>
     <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
-    <script src="https://fasility.com/components/twoway-motion/twoway-motion.js"></script>
+    <script src="https://rawgit.com/Ctrl-Alt-Zen/aframe-mobile-controls/master/components/twoway-motion/twoway-motion.js"></script>
+    <script src="https://rawgit.com/Ctrl-Alt-Zen/aframe-mobile-controls/master/components/tilt-turn/tilt-turn.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="black">
@@ -95,7 +96,7 @@
         https://storage.3d.io/535e624259ee6b0200000484/bake/2017-03-02_16-08-42_qJWmw1/regular/lighting.gz.data3d.buffer
 -->
 
-        <a-entity id="cam" camera twoway-motion="nonMobileLoad: true; chatty: false;" position="0 1.6 0" wasd-controls look-controls>
+        <a-entity id="cam" camera tilt-turn twoway-motion="nonMobileLoad: true; chatty: false;" position="0 1.6 0" wasd-controls look-controls>
             <a-cursor scale="2 2 2" color="white" opacity="0.3">
             </a-cursor>
         </a-entity>
